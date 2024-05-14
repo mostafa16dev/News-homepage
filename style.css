@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "Inter";
+  src: url(assets/fonts/Inter-VariableFont_slnt\,wght.ttf) format("truetype-variations");
+  font-weight: 400 800;
+  font-style: normal;
+  font-stretch: 50% 500%;
+  font-optical-sizing: auto;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 88px 0;
+  width: 77%;
+}
+.container header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.8em;
+}
+.container header nav ul {
+  display: flex;
+  column-gap: 2.5em;
+  color: hsl(236, 13%, 42%);
+}
+.container header nav ul ol {
+  font-size: 1.07em;
+  cursor: pointer;
+}
+.container header nav ul ol:hover {
+  color: hsl(5, 85%, 63%);
+}
+.container main {
+  display: grid;
+  grid-template-areas: "article article aside";
+  column-gap: 2em;
+  margin-bottom: 5em;
+  grid-template-columns: repeat(3, 1fr);
+}
+.container main .main__article {
+  grid-area: article;
+  display: grid;
+  row-gap: 2.1em;
+  column-gap: 2em;
+  max-width: 730px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "image image" "header paragraph" "header button";
+}
+.container main .main__article picture {
+  grid-area: image;
+}
+.container main .main__article picture img {
+  max-width: 100%;
+}
+.container main .main__article h2 {
+  grid-area: header;
+  font-size: 3.75em;
+  line-height: 1em;
+  font-weight: 800;
+}
+.container main .main__article p {
+  grid-area: paragraph;
+  color: hsl(236, 13%, 42%);
+  line-height: 1.6em;
+}
+.container main .main__article button {
+  grid-area: button;
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  border: 0;
+  width: 185px;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.37em;
+  font-size: 0.88em;
+  font-weight: 700;
+  align-self: end;
+  cursor: pointer;
+}
+.container main .main__article button:hover {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+}
+@media (max-width: 992px) {
+  .container main .main__article {
+    max-width: none;
+    margin-bottom: 5em;
+  }
+}
+@media (max-width: 713px) {
+  .container main .main__article {
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "header" "paragraph" "button";
+    row-gap: 1.5em;
+  }
+}
+.container main aside {
+  grid-area: aside;
+  max-width: 350px;
+  background-color: hsl(240, 100%, 5%);
+  padding: 28px 24px;
+}
+.container main aside h2:first-child {
+  color: hsl(35, 77%, 62%);
+  font-size: 2.6em;
+  font-weight: 600;
+  margin-bottom: 0.73em;
+}
+.container main aside article {
+  cursor: pointer;
+}
+.container main aside article:hover h3 {
+  color: hsl(35, 77%, 62%);
+}
+.container main aside article h3 {
+  color: hsl(36, 100%, 99%);
+  font-size: 1.3em;
+  font-weight: 600;
+  letter-spacing: 0.028em;
+  margin-bottom: 0.5em;
+}
+.container main aside article p {
+  color: hsl(233, 8%, 79%);
+  line-height: 1.7em;
+  padding-right: 10px;
+}
+.container main aside hr {
+  margin: 2em 0;
+  border: 0.5px solid hsl(236, 13%, 42%);
+}
+@media (max-width: 992px) {
+  .container main aside {
+    max-width: none;
+  }
+}
+@media (max-width: 992px) {
+  .container main {
+    grid-template-areas: "article article article" "aside aside aside";
+  }
+}
+.container section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+}
+.container section article {
+  display: grid;
+  column-gap: 1.6em;
+  row-gap: 0.5em;
+  grid-template-areas: "image h2" "image h3" "image p";
+  cursor: pointer;
+}
+.container section article:hover h3 {
+  color: hsl(5, 85%, 63%);
+}
+.container section article img {
+  grid-area: image;
+  width: 100px;
+  height: 127px;
+}
+.container section article h2 {
+  margin-top: -5px;
+  font-size: 2.1em;
+  font-weight: 700;
+  color: hsl(233, 8%, 79%);
+}
+.container section article h3 {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: hsl(240, 100%, 5%);
+}
+@media (max-width: 1073px) {
+  .container section article h3 {
+    font-size: 1em;
+  }
+}
+@media (max-width: 992px) {
+  .container section article h3 {
+    font-size: revert;
+  }
+}
+.container section article p {
+  color: hsl(236, 13%, 42%);
+  line-height: 1.7em;
+}
+@media (max-width: 1200px) {
+  .container section article {
+    row-gap: 0;
+  }
+}
+@media (max-width: 713px) {
+  .container section article {
+    justify-content: start;
+  }
+}
+@media (max-width: 992px) {
+  .container section {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.5em;
+  }
+}
+@media (max-width: 713px) {
+  .container section {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1340px) {
+  .container {
+    width: 80%;
+  }
+}
+@media (max-width: 1290px) {
+  .container {
+    width: 87%;
+  }
+}
+@media (max-width: 1186px) {
+  .container {
+    width: 90%;
+  }
+}
+@media (max-width: 1147px) {
+  .container {
+    width: 96%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
